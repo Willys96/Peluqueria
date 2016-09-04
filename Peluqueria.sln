@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peluqueria", "Peluqueria\Peluqueria.csproj", "{AFD3695D-36BE-4C1E-86F3-881786F284F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licencia", "Licencia\Licencia.csproj", "{DAB9D698-0003-446D-983C-56BBDAE66445}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD3695D-36BE-4C1E-86F3-881786F284F6}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB9D698-0003-446D-983C-56BBDAE66445}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

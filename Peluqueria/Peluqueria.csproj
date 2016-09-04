@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFD3695D-36BE-4C1E-86F3-881786F284F6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Peluqueria</RootNamespace>
+    <AssemblyName>Peluqueria</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>E:\DATOS\1552\ProyectoPeluqueria\Resultado\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5C23C1E1FF9D6752828BD5706AB2BED24164E28E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Peluqueria_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cash-register-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.WinControls.PdfViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2016.2.606.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2016.2.606.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2016.2.606.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2016.2.606.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2016.2.606.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2016.2.606.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.2.608.40.Trial\TelerikExport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Negocio.cs" />
+    <Compile Include="Clases\Objetos.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadFormAdelantoInsentivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormAdelantoInsentivo.Designer.cs">
+      <DependentUpon>RadFormAdelantoInsentivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormCliente.Designer.cs">
+      <DependentUpon>RadFormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormDeposito.Designer.cs">
+      <DependentUpon>RadFormDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormGasto.Designer.cs">
+      <DependentUpon>RadFormGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormInventario.Designer.cs">
+      <DependentUpon>RadFormInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormLogin.Designer.cs">
+      <DependentUpon>RadFormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormPagoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormPagoFactura.Designer.cs">
+      <DependentUpon>RadFormPagoFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormProductos.Designer.cs">
+      <DependentUpon>RadFormProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormProveedor.Designer.cs">
+      <DependentUpon>RadFormProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormReporte.Designer.cs">
+      <DependentUpon>RadFormReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormServicios.Designer.cs">
+      <DependentUpon>RadFormServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormUsuarios.Designer.cs">
+      <DependentUpon>RadFormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadFormVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadFormVentas.Designer.cs">
+      <DependentUpon>RadFormVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadRibbonFormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadRibbonFormMain.Designer.cs">
+      <DependentUpon>RadRibbonFormMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RadFormAdelantoInsentivo.resx">
+      <DependentUpon>RadFormAdelantoInsentivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormCliente.resx">
+      <DependentUpon>RadFormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormDeposito.resx">
+      <DependentUpon>RadFormDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormGasto.resx">
+      <DependentUpon>RadFormGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormInventario.resx">
+      <DependentUpon>RadFormInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormLogin.resx">
+      <DependentUpon>RadFormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormPagoFactura.resx">
+      <DependentUpon>RadFormPagoFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormProductos.resx">
+      <DependentUpon>RadFormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormProveedor.resx">
+      <DependentUpon>RadFormProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormReporte.resx">
+      <DependentUpon>RadFormReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormServicios.resx">
+      <DependentUpon>RadFormServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormUsuarios.resx">
+      <DependentUpon>RadFormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadFormVentas.resx">
+      <DependentUpon>RadFormVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadRibbonFormMain.resx">
+      <DependentUpon>RadRibbonFormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Peluqueria_ClaveTemporal.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cash-register-icon.ico" />
+    <Content Include="Imagenes\Actions-exit-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Add-Male-User-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Add-ticket-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\basket-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\cash-register-icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\cash-register-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Comment-add-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Comment-edit-icon %281%29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\comment-edit-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Male-user-edit-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note-add-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note-edit-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\price-tag-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Save-as-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Shopping-basket-add-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Shopping-basket-refresh-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\shopping-cart-add-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\shopping-cart-remove-icon %281%29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\shopping-cart-remove-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
