@@ -81,143 +81,33 @@ namespace Peluqueria
             RadGridViewAdelantoInsentivos.Select();
             RadGridViewAdelantoInsentivos.EnableSorting = true;
 
-            List<int> data = dttAdelantoInsentivo.AsEnumerable().Select(Nombre => Nombre.Field<string>("Nombre").Length).ToList();
+            List<int> data = dttAdelantoInsentivo.AsEnumerable().Select(CodigoUsuario => CodigoUsuario.Field<string>("CodigoUsuario").Length).ToList();
             int WidthText = data.Max();
             var col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                      where dat.Field<string>("Nombre").Length == WidthText
+                      where dat.Field<string>("CodigoUsuario").Length == WidthText
                       select dat;
 
-            GridViewTextBoxColumn colNombre = new GridViewTextBoxColumn();
-            colNombre.FieldName = "Nombre";
-            colNombre.HeaderText = "Nombre";
-            colNombre.MinWidth = Consulta.AnchoTexto(WidthText > colNombre.HeaderText.Length
-                                            ? col.First().Field<string>("Nombre").ToString()
-                                            : colNombre.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colNombre.Name = "colNombre";
-            colNombre.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colNombre);
+            GridViewTextBoxColumn colCodigoUsuario = new GridViewTextBoxColumn();
+            colCodigoUsuario.FieldName = "CodigoUsuario";
+            colCodigoUsuario.HeaderText = "CodigoUsuario";
+            colCodigoUsuario.MinWidth = Consulta.AnchoTexto(WidthText > colCodigoUsuario.HeaderText.Length
+                                            ? col.First().Field<string>("CodigoUsuario").ToString()
+                                            : colCodigoUsuario.HeaderText, RadGridViewAdelantoInsentivos.Font);
+            colCodigoUsuario.Name = "colCodigoUsuario";
+            colCodigoUsuario.ReadOnly = true;
+            RadGridViewAdelantoInsentivos.Columns.Add(colCodigoUsuario);
 
-            data = dttAdelantoInsentivo.AsEnumerable().Select(CodigoAdelantoInsentivo => CodigoAdelantoInsentivo.Field<string>("CodigoAdelantoInsentivo").Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("CodigoAdelantoInsentivo").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colCodigoAdelantoInsentivo = new GridViewTextBoxColumn();
-            colCodigoAdelantoInsentivo.FieldName = "CodigoAdelantoInsentivo";
-            colCodigoAdelantoInsentivo.HeaderText = "Codigo";
-            colCodigoAdelantoInsentivo.MinWidth = Consulta.AnchoTexto(WidthText > colCodigoAdelantoInsentivo.HeaderText.Length
-                                            ? col.First().Field<string>("CodigoAdelantoInsentivo").ToString()
-                                            : colCodigoAdelantoInsentivo.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colCodigoAdelantoInsentivo.Name = "colCodigoAdelantoInsentivo";
-            colCodigoAdelantoInsentivo.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colCodigoAdelantoInsentivo);
-
-            data = dttAdelantoInsentivo.AsEnumerable().Select(Proveedor => Proveedor.Field<string>("Proveedor").Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("Proveedor").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colProveedor = new GridViewTextBoxColumn();
-            colProveedor.FieldName = "Proveedor";
-            colProveedor.HeaderText = "Proveedor";
-            colProveedor.MinWidth = Consulta.AnchoTexto(WidthText > colProveedor.HeaderText.Length
-                                            ? col.First().Field<string>("Proveedor").ToString()
-                                            : colProveedor.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colProveedor.Name = "colProveedor";
-            colProveedor.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colProveedor);
-
-            data = dttAdelantoInsentivo.AsEnumerable().Select(Nombre => Nombre.Field<int>("UnidadxAdelantoInsentivo").ToString().Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("UnidadxAdelantoInsentivo").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colUnidadxAdelantoInsentivo = new GridViewTextBoxColumn();
-            colUnidadxAdelantoInsentivo.DataType = typeof(decimal);
-            colUnidadxAdelantoInsentivo.FieldName = "UnidadxAdelantoInsentivo";
-            colUnidadxAdelantoInsentivo.FormatString = "{0:G}";
-            colUnidadxAdelantoInsentivo.HeaderText = "Unidad por AdelantoInsentivo";
-            colUnidadxAdelantoInsentivo.MinWidth = Consulta.AnchoTexto(WidthText > colUnidadxAdelantoInsentivo.HeaderText.Length
-                                            ? col.First().Field<int>("UnidadxAdelantoInsentivo").ToString()
-                                            : colUnidadxAdelantoInsentivo.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colUnidadxAdelantoInsentivo.Name = "colUnidadxAdelantoInsentivo";
-            colUnidadxAdelantoInsentivo.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colUnidadxAdelantoInsentivo);
-
-            data = dttAdelantoInsentivo.AsEnumerable().Select(Nombre => Nombre.Field<int>("ValorCompra").ToString().Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("ValorCompra").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colValorCompra = new GridViewTextBoxColumn();
-            colValorCompra.DataType = typeof(decimal);
-            colValorCompra.FieldName = "ValorCompra";
-            colValorCompra.FormatString = "{0:C}";
-            colValorCompra.HeaderText = "Valor de Compra";
-            colValorCompra.MinWidth = Consulta.AnchoTexto(WidthText > colValorCompra.HeaderText.Length
-                                            ? col.First().Field<int>("ValorCompra").ToString()
-                                            : colValorCompra.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colValorCompra.Name = "colValorCompra";
-            colValorCompra.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colValorCompra);
-
-            data = dttAdelantoInsentivo.AsEnumerable().Select(Nombre => Nombre.Field<int>("ValorVentaXUnidad").ToString().Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("ValorVentaXUnidad").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colValorVentaXUnidad = new GridViewTextBoxColumn();
-            colValorVentaXUnidad.DataType = typeof(decimal);
-            colValorVentaXUnidad.FieldName = "ValorVentaXUnidad";
-            colValorVentaXUnidad.FormatString = "{0:C}";
-            colValorVentaXUnidad.HeaderText = "Valor de Venta Unidad";
-            colValorVentaXUnidad.MinWidth = Consulta.AnchoTexto(WidthText > colValorVentaXUnidad.HeaderText.Length
-                                            ? col.First().Field<int>("ValorVentaXUnidad").ToString()
-                                            : colValorVentaXUnidad.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colValorVentaXUnidad.Name = "colValorVentaXUnidad";
-            colValorVentaXUnidad.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colValorVentaXUnidad);
-
-            data = dttAdelantoInsentivo.AsEnumerable().Select(Nombre => Nombre.Field<int>("PorcentajeVentaPublico").ToString().Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("PorcentajeVentaPublico").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colPorcentajeVentaPublico = new GridViewTextBoxColumn();
-            colPorcentajeVentaPublico.DataType = typeof(decimal);
-            colPorcentajeVentaPublico.FieldName = "PorcentajeVentaPublico";
-            colPorcentajeVentaPublico.FormatString = "{0:G}";
-            colPorcentajeVentaPublico.HeaderText = "Porcentaje de Bonificación";
-            colPorcentajeVentaPublico.MinWidth = Consulta.AnchoTexto(WidthText > colPorcentajeVentaPublico.HeaderText.Length
-                                            ? col.First().Field<int>("PorcentajeVentaPublico").ToString()
-                                            : colPorcentajeVentaPublico.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colPorcentajeVentaPublico.Name = "colPorcentajeVentaPublico";
-            colPorcentajeVentaPublico.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colPorcentajeVentaPublico);
-
-            data = dttAdelantoInsentivo.AsEnumerable().Select(Nombre => Nombre.Field<int>("DescuentoVentaInterna").ToString().Length).ToList();
-            WidthText = data.Max();
-            col = from dat in dttAdelantoInsentivo.AsEnumerable()
-                  where dat.Field<string>("DescuentoVentaInterna").Length == WidthText
-                  select dat;
-
-            GridViewTextBoxColumn colDescuentoVentaInterna = new GridViewTextBoxColumn();
-            colDescuentoVentaInterna.DataType = typeof(decimal);
-            colDescuentoVentaInterna.FieldName = "DescuentoVentaInterna";
-            colDescuentoVentaInterna.FormatString = "{0:G}";
-            colDescuentoVentaInterna.HeaderText = "Unidad por AdelantoInsentivo";
-            colDescuentoVentaInterna.MinWidth = Consulta.AnchoTexto(WidthText > colDescuentoVentaInterna.HeaderText.Length
-                                            ? col.First().Field<int>("DescuentoVentaInterna").ToString()
-                                            : colDescuentoVentaInterna.HeaderText, RadGridViewAdelantoInsentivos.Font);
-            colDescuentoVentaInterna.Name = "colDescuentoVentaInterna";
-            colDescuentoVentaInterna.ReadOnly = true;
-            RadGridViewAdelantoInsentivos.Columns.Add(colDescuentoVentaInterna);
+            GridViewTextBoxColumn colValorAdelantoInsentivo = new GridViewTextBoxColumn();
+            colValorAdelantoInsentivo.DataType = typeof(decimal);
+            colValorAdelantoInsentivo.FieldName = "ValorAdelantoInsentivo";
+            colValorAdelantoInsentivo.FormatString = "{0:C}";
+            colValorAdelantoInsentivo.HeaderText = "Valor de Compra";
+            colValorAdelantoInsentivo.MinWidth = Consulta.AnchoTexto(WidthText > colValorAdelantoInsentivo.HeaderText.Length
+                                            ? col.First().Field<int>("ValorAdelantoInsentivo").ToString()
+                                            : colValorAdelantoInsentivo.HeaderText, RadGridViewAdelantoInsentivos.Font);
+            colValorAdelantoInsentivo.Name = "colValorAdelantoInsentivo";
+            colValorAdelantoInsentivo.ReadOnly = true;
+            RadGridViewAdelantoInsentivos.Columns.Add(colValorAdelantoInsentivo);
 
             GridViewCheckBoxColumn colInsumo = new GridViewCheckBoxColumn();
             colInsumo.FieldName = "Insumo";
@@ -268,6 +158,7 @@ namespace Peluqueria
 
         private void RadMenuItemAdicionar_Click(object sender, EventArgs e)
         {
+            RowIndex = -1;
             Limpia();
             Habilita(true);
             RadChkActivo.Enabled = false;
@@ -298,7 +189,7 @@ namespace Peluqueria
 
         private void RadMenuItemGuardar_Click(object sender, EventArgs e)
         {
-            bool modifica = RadMenuItemEditar.Enabled;
+            bool modifica = RowIndex > -1;//RadMenuItemEditar.Enabled;
 
             if (ValidaCambios(modifica))
             {

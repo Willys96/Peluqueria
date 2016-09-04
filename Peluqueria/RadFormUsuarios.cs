@@ -312,6 +312,7 @@ namespace Peluqueria
 
         private void RadMenuItemAdicionar_Click(object sender, EventArgs e)
         {
+            RowIndex = -1;
             Limpia();
             Habilita(true);
             RadChkActivo.Enabled = false;
@@ -346,9 +347,9 @@ namespace Peluqueria
 
         private void RadMenuItemGuardar_Click(object sender, EventArgs e)
         {
-            bool modifica = RadMenuItemEditar.Enabled;
+            bool modifica = RowIndex > -1;
 
-            if(ValidaCambios(modifica))
+            if (ValidaCambios(modifica))
             {
                 RadMessageBox.Show("No se han realizado cambios.","ALERTA");
                 return;

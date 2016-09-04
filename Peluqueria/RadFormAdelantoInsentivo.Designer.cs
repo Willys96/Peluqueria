@@ -82,6 +82,7 @@
             this.RadMenuItemCancelar.Name = "RadMenuItemCancelar";
             this.RadMenuItemCancelar.Text = "Cancelar";
             this.RadMenuItemCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RadMenuItemCancelar.Click += new System.EventHandler(this.RadMenuItemCancelar_Click);
             // 
             // splitPanel1
             // 
@@ -158,6 +159,7 @@
             this.RadMenuItemAdicionar.Name = "RadMenuItemAdicionar";
             this.RadMenuItemAdicionar.Text = "Adicionar";
             this.RadMenuItemAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RadMenuItemAdicionar.Click += new System.EventHandler(this.RadMenuItemAdicionar_Click);
             // 
             // RadMenuItemEditar
             // 
@@ -165,6 +167,7 @@
             this.RadMenuItemEditar.Name = "RadMenuItemEditar";
             this.RadMenuItemEditar.Text = "Editar";
             this.RadMenuItemEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RadMenuItemEditar.Click += new System.EventHandler(this.RadMenuItemEditar_Click);
             // 
             // RadMenuItemGuardar
             // 
@@ -172,6 +175,7 @@
             this.RadMenuItemGuardar.Name = "RadMenuItemGuardar";
             this.RadMenuItemGuardar.Text = "Guardar";
             this.RadMenuItemGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RadMenuItemGuardar.Click += new System.EventHandler(this.RadMenuItemGuardar_Click);
             // 
             // splitPanel4
             // 
