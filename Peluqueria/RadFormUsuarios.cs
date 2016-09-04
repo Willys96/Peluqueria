@@ -19,6 +19,7 @@ namespace Peluqueria
         Negocio Consulta = new Negocio();
         int RowIndex = -1;
 
+
         public RadFormUsuarios()
         {
             InitializeComponent();
