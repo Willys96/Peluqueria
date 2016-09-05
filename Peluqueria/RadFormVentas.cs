@@ -84,7 +84,7 @@ namespace Peluqueria
                 if (ProdVenta.Count()>0)
                 {
                     RadDrpProductos.DataSource = ProdVenta.CopyToDataTable().Copy();
-                    RadDrpProductos.DisplayMember = "Nombre";
+                    RadDrpProductos.DisplayMember = "CodigoProducto";
                     RadDrpProductos.ValueMember = "ProductoID";
                     RadDrpProductos.SelectedIndex = -1; 
                 }

@@ -312,8 +312,8 @@ namespace Peluqueria.Clases
 
                 if (DateTime.Today.DayOfWeek.ToString() == "Monday")
                 {
-                    venta = ConsultaVentas(0, DateTime.Today.AddDays(-7).ToString("yyyyMMdd"), DateTime.Today.AddDays(-1).ToString("yyyyMMdd"));
-                    FusionTablas(dsConsulta, venta, "0", DateTime.Today.AddDays(-7), DateTime.Today.AddDays(-1));
+                    venta = ConsultaVentas(0, DateTime.Today.AddDays(-8).ToString("yyyyMMdd"), DateTime.Today.AddDays(-2).ToString("yyyyMMdd"));
+                    FusionTablas(dsConsulta, venta, "0", DateTime.Today.AddDays(-8), DateTime.Today.AddDays(-2));
                 }
 
                 if (DateTime.Today.Day == 1)
@@ -325,12 +325,12 @@ namespace Peluqueria.Clases
 
                 #region Nomina
                 DataSet nomina = ConsultaVentas(1, DateTime.Today.AddDays(-1).ToString("yyyyMMdd"), DateTime.Today.AddDays(-1).ToString("yyyyMMdd"));
-                FusionTablas(dsConsulta, venta, "1", DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
+                FusionTablas(dsConsulta, nomina, "1", DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
 
                 if (DateTime.Today.DayOfWeek.ToString() == "Monday")
                 {
-                    nomina = ConsultaVentas(1, DateTime.Today.AddDays(-7).ToString("yyyyMMdd"), DateTime.Today.AddDays(-1).ToString("yyyyMMdd"));
-                    FusionTablas(dsConsulta, nomina, "1", DateTime.Today.AddDays(-7), DateTime.Today.AddDays(-1));
+                    nomina = ConsultaVentas(1, DateTime.Today.AddDays(-8).ToString("yyyyMMdd"), DateTime.Today.AddDays(-2).ToString("yyyyMMdd"));
+                    FusionTablas(dsConsulta, nomina, "1", DateTime.Today.AddDays(-8), DateTime.Today.AddDays(-2));
                 }
 
                 if (DateTime.Today.Day == 1)

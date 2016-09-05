@@ -85,10 +85,10 @@ namespace Peluqueria
 
                         if (Dts.Tables[0].Rows[0]["Resultado"].ToString() == "1")
                         {
-                            Consulta.GeneraExcelMultiplePagina(@"E:\DATOS\1552\ProyectoPeluqueria\reporte.xls");
-                            Consulta.Correo("Reporte", new string[] { @"E:\DATOS\1552\ProyectoPeluqueria\reporte.xls" });
+                            Consulta.GeneraExcelMultiplePagina( Application.StartupPath+ @"\reporte"+DateTime.Now.ToString("yyyyMMdd")+".xls");
+                            Consulta.Correo("Reporte", new string[] { Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls" });
 
-                            FileInfo reporte = new FileInfo(@"E:\DATOS\1552\ProyectoPeluqueria\reporte.xls");
+                            FileInfo reporte = new FileInfo(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
                             reporte.Delete();
 
                             RadRibbonFormMain FMain = new RadRibbonFormMain();
