@@ -189,7 +189,7 @@ namespace Peluqueria
 
         private void RadMenuItemGuardar_Click(object sender, EventArgs e)
         {
-            bool modifica = RowIndex > -1;//RadMenuItemEditar.Enabled;
+            bool modifica = RowIndex > -1;
 
             if (ValidaCambios(modifica))
             {

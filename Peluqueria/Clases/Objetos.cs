@@ -787,4 +787,128 @@ namespace Peluqueria.Clases
         }
 
     }
+
+    class Proveedor
+    {
+        public Proveedor() { }
+
+        int proveedorID;
+        public int ProveedorID
+        {
+            get
+            {
+                return proveedorID;
+            }
+
+            set
+            {
+                proveedorID = value;
+            }
+        }
+
+        string nombre;
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        bool activo;
+        public bool Activo
+        {
+            get
+            {
+                return activo;
+            }
+
+            set
+            {
+                activo = value;
+            }
+        }
+
+    }
+
+    class Cliente
+    {
+        public Cliente() { }
+
+        int clienteID;
+        public int ClienteID
+        {
+            get
+            {
+                return clienteID;
+            }
+
+            set
+            {
+                clienteID = value;
+            }
+        }
+
+        string nombre;
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        string correo;
+        public string Correo
+        {
+            get
+            {
+                return correo;
+            }
+
+            set
+            {
+                correo = value;
+            }
+        }
+
+        string telefono;
+        public string Telefono
+        {
+            get
+            {
+                return telefono;
+            }
+
+            set
+            {
+                telefono = value;
+            }
+        }
+
+        bool activo;
+        public bool Activo
+        {
+            get
+            {
+                return activo;
+            }
+
+            set
+            {
+                activo = value;
+            }
+        }
+
+    }
 }

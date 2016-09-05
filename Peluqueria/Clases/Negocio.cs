@@ -931,5 +931,51 @@ namespace Peluqueria.Clases
         }
 
         #endregion
+
+        #region Proveedores - Clientes
+
+        public DataSet ConsultaProveedor()
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            DataSet dtscan = GetDts("SpConsultaProveedor", parametros);
+
+            return dtscan;
+        }
+
+        public DataSet ConsultaCliente()
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            DataSet dtscan = GetDts("SpConsultaCliente", parametros);
+
+            return dtscan;
+        }
+
+        public DataSet GuardaProveedor(bool Modifica, Proveedor Gast)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@ProveedorID", Gast.ProveedorID));
+            parametros.Add(new SqlParameter("@Nombre", Gast.Nombre));
+            parametros.Add(new SqlParameter("@Activo", Gast.Activo));
+            parametros.Add(new SqlParameter(Modifica ? "@UsuarioModificaID" : "@UsuarioCreaID", Program.User.UsuarioID));
+            DataSet dtscan = GetDts(Modifica ? "SpModificaProveedor" : "SpCreaProveedor", parametros);
+
+            return dtscan;
+        }
+
+        public DataSet GuardaCliente(bool Modifica, Cliente Gast)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@ClienteID", Gast.ClienteID));
+            parametros.Add(new SqlParameter("@Nombre", Gast.Nombre));
+            parametros.Add(new SqlParameter("@Correo", Gast.Correo));
+            parametros.Add(new SqlParameter("@Telefono", Gast.Telefono));
+            parametros.Add(new SqlParameter("@Activo", Gast.Activo));
+            parametros.Add(new SqlParameter(Modifica ? "@UsuarioModificaID" : "@UsuarioCreaID", Program.User.UsuarioID));
+            DataSet dtscan = GetDts(Modifica ? "SpModificaCliente" : "SpCreaCliente", parametros);
+
+            return dtscan;
+        }
+
+        #endregion
     }
 }
