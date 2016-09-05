@@ -18,8 +18,8 @@ namespace Peluqueria
         DataSet dts = new DataSet();
         DataTable dttProducto = new DataTable();
         Negocio Consulta = new Negocio();
-
         int RowIndex = -1;
+
         public RadFormProductos()
         {
             InitializeComponent();
@@ -344,7 +344,6 @@ namespace Peluqueria
 
             RadMessageBox.Show(dtsSave.Tables[0].Rows[0]["Mensaje"].ToString(), "Respuesta");
 
-            dts = Consulta.ConsultaProducto();
             TablaProducto();
 
             RadMenuItemEditar.Enabled = true;

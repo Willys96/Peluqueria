@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadRibbonFormMain));
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.RibbonTabVentas = new Telerik.WinControls.UI.RibbonTab();
             this.RadRibbonBarGroupFACTURACION = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -102,7 +102,7 @@
             // 
             // RibbonTabVentas
             // 
-            this.RibbonTabVentas.IsSelected = false;
+            this.RibbonTabVentas.IsSelected = true;
             this.RibbonTabVentas.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.RadRibbonBarGroupFACTURACION});
             this.RibbonTabVentas.Name = "RibbonTabVentas";
@@ -169,7 +169,7 @@
             // 
             // RibbonTabConfiguracion
             // 
-            this.RibbonTabConfiguracion.IsSelected = true;
+            this.RibbonTabConfiguracion.IsSelected = false;
             this.RibbonTabConfiguracion.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.RadRibbonBarGroupUSUARIOS,
             this.RadRibbonBarGroupPRODUCTOS,
@@ -338,10 +338,10 @@
             this.RadMenuComboItemTheme.ComboBoxElement.FormatString = "";
             this.RadMenuComboItemTheme.ComboBoxElement.FormattingEnabled = true;
             this.RadMenuComboItemTheme.ComboBoxElement.ItemHeight = 18;
-            radListDataItem1.Text = "Office2007Black";
-            radListDataItem2.Text = "VisualStudio212Dark";
-            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem1);
-            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem2);
+            radListDataItem3.Text = "Office2007Black";
+            radListDataItem4.Text = "VisualStudio212Dark";
+            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem3);
+            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem4);
             this.RadMenuComboItemTheme.ComboBoxElement.MaxDropDownItems = 0;
             this.RadMenuComboItemTheme.ComboBoxElement.MaxLength = 32767;
             this.RadMenuComboItemTheme.ComboBoxElement.MaxValue = null;
