@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadRibbonFormMain));
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.RibbonTabVentas = new Telerik.WinControls.UI.RibbonTab();
             this.RadRibbonBarGroupFACTURACION = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -233,8 +233,9 @@
             // 
             // RadButtonElementProveedor
             // 
+            this.RadButtonElementProveedor.Image = ((System.Drawing.Image)(resources.GetObject("RadButtonElementProveedor.Image")));
             this.RadButtonElementProveedor.Name = "RadButtonElementProveedor";
-            this.RadButtonElementProveedor.Text = "radButtonElement1";
+            this.RadButtonElementProveedor.Text = "";
             this.RadButtonElementProveedor.Click += new System.EventHandler(this.RadButtonElementProveedor_Click);
             // 
             // RadRibbonBarGroupCLIENTE
@@ -246,8 +247,9 @@
             // 
             // RadButtonElementCliente
             // 
+            this.RadButtonElementCliente.Image = ((System.Drawing.Image)(resources.GetObject("RadButtonElementCliente.Image")));
             this.RadButtonElementCliente.Name = "RadButtonElementCliente";
-            this.RadButtonElementCliente.Text = "radButtonElement1";
+            this.RadButtonElementCliente.Text = "";
             this.RadButtonElementCliente.Click += new System.EventHandler(this.RadButtonElementCliente_Click);
             // 
             // RibbonTabGestionGastos
@@ -263,15 +265,21 @@
             // 
             // RadRibbonBarGroupADELANTOINSENTIVO
             // 
+            this.RadRibbonBarGroupADELANTOINSENTIVO.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            this.RadRibbonBarGroupADELANTOINSENTIVO.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
             this.RadRibbonBarGroupADELANTOINSENTIVO.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.RadButtonElementAdelantoInsentivo});
             this.RadRibbonBarGroupADELANTOINSENTIVO.Name = "RadRibbonBarGroupADELANTOINSENTIVO";
             this.RadRibbonBarGroupADELANTOINSENTIVO.Text = "ADELANTOS Y/O INSENTIVOS";
+            this.RadRibbonBarGroupADELANTOINSENTIVO.TextOrientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // RadButtonElementAdelantoInsentivo
             // 
+            this.RadButtonElementAdelantoInsentivo.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            this.RadButtonElementAdelantoInsentivo.Image = ((System.Drawing.Image)(resources.GetObject("RadButtonElementAdelantoInsentivo.Image")));
+            this.RadButtonElementAdelantoInsentivo.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.RadButtonElementAdelantoInsentivo.Name = "RadButtonElementAdelantoInsentivo";
-            this.RadButtonElementAdelantoInsentivo.Text = "radButtonElement1";
+            this.RadButtonElementAdelantoInsentivo.Text = "";
             this.RadButtonElementAdelantoInsentivo.Click += new System.EventHandler(this.RadButtonElementAdelantoInsentivo_Click);
             // 
             // RadRibbonBarGroupDEPOSITO
@@ -283,8 +291,9 @@
             // 
             // RadButtonElementDesposito
             // 
+            this.RadButtonElementDesposito.Image = ((System.Drawing.Image)(resources.GetObject("RadButtonElementDesposito.Image")));
             this.RadButtonElementDesposito.Name = "RadButtonElementDesposito";
-            this.RadButtonElementDesposito.Text = "radButtonElement1";
+            this.RadButtonElementDesposito.Text = "";
             this.RadButtonElementDesposito.Click += new System.EventHandler(this.RadButtonElementDesposito_Click);
             // 
             // RadRibbonBarGroupGASTO
@@ -296,8 +305,9 @@
             // 
             // RadButtonElementGasto
             // 
+            this.RadButtonElementGasto.Image = ((System.Drawing.Image)(resources.GetObject("RadButtonElementGasto.Image")));
             this.RadButtonElementGasto.Name = "RadButtonElementGasto";
-            this.RadButtonElementGasto.Text = "radButtonElement1";
+            this.RadButtonElementGasto.Text = "";
             this.RadButtonElementGasto.Click += new System.EventHandler(this.RadButtonElementGasto_Click);
             // 
             // RadRibbonBarGroupPAGOFACTURA
@@ -309,8 +319,11 @@
             // 
             // RadButtonElementPagoFactura
             // 
+            this.RadButtonElementPagoFactura.AutoSize = true;
+            this.RadButtonElementPagoFactura.Image = ((System.Drawing.Image)(resources.GetObject("RadButtonElementPagoFactura.Image")));
+            this.RadButtonElementPagoFactura.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.RadButtonElementPagoFactura.Name = "RadButtonElementPagoFactura";
-            this.RadButtonElementPagoFactura.Text = "radButtonElement1";
+            this.RadButtonElementPagoFactura.Text = "";
             this.RadButtonElementPagoFactura.Click += new System.EventHandler(this.RadButtonElementPagoFactura_Click);
             // 
             // RadMenuComboItemTheme
@@ -338,10 +351,10 @@
             this.RadMenuComboItemTheme.ComboBoxElement.FormatString = "";
             this.RadMenuComboItemTheme.ComboBoxElement.FormattingEnabled = true;
             this.RadMenuComboItemTheme.ComboBoxElement.ItemHeight = 18;
-            radListDataItem3.Text = "Office2007Black";
-            radListDataItem4.Text = "VisualStudio212Dark";
-            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem3);
-            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem4);
+            radListDataItem1.Text = "Office2007Black";
+            radListDataItem2.Text = "VisualStudio212Dark";
+            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem1);
+            this.RadMenuComboItemTheme.ComboBoxElement.Items.Add(radListDataItem2);
             this.RadMenuComboItemTheme.ComboBoxElement.MaxDropDownItems = 0;
             this.RadMenuComboItemTheme.ComboBoxElement.MaxLength = 32767;
             this.RadMenuComboItemTheme.ComboBoxElement.MaxValue = null;

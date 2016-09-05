@@ -274,7 +274,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "RadFormProveedor";
+            this.Text = "CONFIGURACIÓN DE PROVEEDORES";
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).EndInit();
             this.splitPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RadGridViewProveedor.MasterTemplate)).EndInit();

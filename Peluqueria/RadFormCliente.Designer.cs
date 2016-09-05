@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadFormCliente));
             this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
             this.RadGridViewCliente = new Telerik.WinControls.UI.RadGridView();
@@ -99,7 +99,7 @@
             // 
             // 
             // 
-            this.RadGridViewCliente.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.RadGridViewCliente.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.RadGridViewCliente.Name = "RadGridViewCliente";
             this.RadGridViewCliente.Size = new System.Drawing.Size(488, 470);
             this.RadGridViewCliente.TabIndex = 0;
@@ -320,7 +320,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "RadFormCliente";
+            this.Text = "CONFIGURACIÓN DE CLIENTES";
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).EndInit();
             this.splitPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RadGridViewCliente.MasterTemplate)).EndInit();
