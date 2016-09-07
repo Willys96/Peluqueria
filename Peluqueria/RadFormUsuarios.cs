@@ -410,8 +410,7 @@ namespace Peluqueria
 
         private void RadMenuItemCancelar_Click(object sender, EventArgs e)
         {
-            Habilita(false);
-            cargaControles();
+            TablaUsuario();
             RadMenuItemEditar.Enabled = true;
             RadMenuItemAdicionar.Enabled = true;
             RadMenuItemGuardar.Enabled = false;
