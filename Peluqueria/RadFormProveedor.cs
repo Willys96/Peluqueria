@@ -167,6 +167,18 @@ namespace Peluqueria
                 return;
             }
 
+            if(RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadTxtNombre.Text == "")
+            {
+                RadMessageBox.Show("Debes ingresar Nombre del Proveedor.", "ALERTA");
+                return;
+            }
+
+            
             Proveedor Product = new Proveedor();
             Product.ProveedorID = modifica ? int.Parse(dttProveedor.Rows[RowIndex]["ProveedorID"].ToString()) : 0;
             Product.Nombre = RadTxtNombre.Text;

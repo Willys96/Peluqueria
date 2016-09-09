@@ -205,10 +205,23 @@ namespace Peluqueria
                 return;
             }
 
+            if (RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadTxtNombre.Text=="")
+            {
+                RadMessageBox.Show("Debes Ingresar el Nombre del Cliente", "ALERTA");
+                return;
+            }
+
+            
+
             Cliente Product = new Cliente();
             Product.ClienteID = modifica ? int.Parse(dttCliente.Rows[RowIndex]["ClienteID"].ToString()) : 0;
             Product.Nombre = RadTxtNombre.Text;
-            Product.Correo = RadMskCorreo.Value.ToString();
+            Product.Correo = RadMskCorreo.Text.ToString();
             Product.Telefono = RadMskTelefono.Value.ToString();
             Product.Activo = RadChkActivo.Checked;
 
@@ -241,7 +254,7 @@ namespace Peluqueria
             if (modifica)
             {
                 cont = RadTxtNombre.Text != dttCliente.Rows[RowIndex]["Nombre"].ToString() ? (cont + 1) : cont;
-                cont = RadMskCorreo.Value.ToString() != dttCliente.Rows[RowIndex]["Correo"].ToString() ? (cont + 1) : cont;
+                cont = RadMskCorreo.Text.ToString() != dttCliente.Rows[RowIndex]["Correo"].ToString() ? (cont + 1) : cont;
                 cont = RadMskTelefono.Value.ToString() != dttCliente.Rows[RowIndex]["Telefono"].ToString() ? (cont + 1) : cont;
                 cont = RadChkActivo.Checked != bool.Parse(dttCliente.Rows[RowIndex]["Activo"].ToString()) ? (cont + 1) : cont;
 

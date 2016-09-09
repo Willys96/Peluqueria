@@ -355,11 +355,42 @@ namespace Peluqueria
                 return;
             }
 
-            if(Program.User.RolID>=int.Parse(RadDrpRol.SelectedValue.ToString()))
+            if (RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadTxtNombre.Text == "" || RadTxtApellido.Text=="")
+            {
+                RadMessageBox.Show("Debes ingresar Nombre y Apellido del Usuario.", "ALERTA");
+                return;
+            }
+
+            if (RadTxtCodigo.Text == "")
+            {
+                RadMessageBox.Show("Debes ingresar Código del Usuario.", "ALERTA");
+                return;
+            }
+
+            if (RadTxtUsuario.Text == "" || RadTxtClave.Text=="")
+            {
+                RadMessageBox.Show("Debes ingresar Nombre de Usuario y su Clave.", "ALERTA");
+                return;
+            }
+
+            if (RadDrpRol.SelectedIndex==-1)
+            {
+                RadMessageBox.Show("Debe seleccionar el Rol del Usuario.", "ALERTA");
+                return;
+            }
+
+            if (Program.User.RolID>=int.Parse(RadDrpRol.SelectedValue.ToString()))
             {
                 RadMessageBox.Show("Solo puede crear usuarios con roles inferiores.", "ALERTA");
                 return;
             }
+
+
 
             Usuario User = new Usuario();
             User.UsuarioID = modifica  ? int.Parse(dttUsuario.Rows[RowIndex]["UsuarioID"].ToString()):0;

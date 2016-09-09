@@ -180,6 +180,11 @@ namespace Peluqueria
         {
             bool modifica = RadMenuItemEditar.Enabled;
 
+            if (RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
             if (Convert.ToInt32(float.Parse(RadMskCantidadUnidad.Value.ToString()))==0)
             {
                 RadMessageBox.Show("El valor de Cantidad debe ser mayor a 0.", "ALERTA");

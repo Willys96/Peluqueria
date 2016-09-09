@@ -101,7 +101,7 @@ namespace Peluqueria
             colValorAdelantoInsentivo.DataType = typeof(decimal);
             colValorAdelantoInsentivo.FieldName = "ValorAdelantoInsentivo";
             colValorAdelantoInsentivo.FormatString = "{0:C}";
-            colValorAdelantoInsentivo.HeaderText = "Valor de Compra";
+            colValorAdelantoInsentivo.HeaderText = "Valor";
             colValorAdelantoInsentivo.MinWidth = Consulta.AnchoTexto(WidthText > colValorAdelantoInsentivo.HeaderText.Length
                                             ? col.First().Field<int>("ValorAdelantoInsentivo").ToString()
                                             : colValorAdelantoInsentivo.HeaderText, RadGridViewAdelantoInsentivos.Font);
@@ -110,9 +110,9 @@ namespace Peluqueria
             RadGridViewAdelantoInsentivos.Columns.Add(colValorAdelantoInsentivo);
 
             GridViewCheckBoxColumn colInsumo = new GridViewCheckBoxColumn();
-            colInsumo.FieldName = "Insumo";
-            colInsumo.HeaderText = "Insumo";
-            colInsumo.MinWidth = Consulta.AnchoTexto("Insumo", RadGridViewAdelantoInsentivos.Font);
+            colInsumo.FieldName = "Adelanto";
+            colInsumo.HeaderText = "Adelanto";
+            colInsumo.MinWidth = Consulta.AnchoTexto("Adelanto", RadGridViewAdelantoInsentivos.Font);
             colInsumo.Name = "colInsumo";
             colInsumo.ReadOnly = true;
             RadGridViewAdelantoInsentivos.Columns.Add(colInsumo);
@@ -194,6 +194,23 @@ namespace Peluqueria
             if (ValidaCambios(modifica))
             {
                 RadMessageBox.Show("No se han realizado cambios.", "ALERTA");
+                return;
+            }
+
+            if(RadMessageBox.Show("Seguro desea guardar la información suministrada?","ALERTA",MessageBoxButtons.YesNo)==DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadDrpUsuario.SelectedIndex==-1)
+            {
+                RadMessageBox.Show("Debes seleccionar un(a) estilista", "ALERTA");
+                return;
+            }
+
+            if(float.Parse(RadMskValorCompra.Value.ToString())==0)
+            {
+                RadMessageBox.Show("Debes ingresar el valor del Adelanto o Insentivo", "ALERTA");
                 return;
             }
 

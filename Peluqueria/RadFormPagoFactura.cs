@@ -124,7 +124,7 @@ namespace Peluqueria
             colValorPagoFactura.DataType = typeof(decimal);
             colValorPagoFactura.FieldName = "ValorPagoFactura";
             colValorPagoFactura.FormatString = "{0:C}";
-            colValorPagoFactura.HeaderText = "Valor de PagoFactura";
+            colValorPagoFactura.HeaderText = "Valor de Factura";
             colValorPagoFactura.MinWidth = Consulta.AnchoTexto(WidthText > colValorPagoFactura.HeaderText.Length
                                             ? col.First().Field<int>("ValorPagoFactura").ToString()
                                             : colValorPagoFactura.HeaderText, RadGridViewPagoFacturas.Font);
@@ -209,6 +209,29 @@ namespace Peluqueria
             if (ValidaCambios(modifica))
             {
                 RadMessageBox.Show("No se han realizado cambios.", "ALERTA");
+                return;
+            }
+
+            if (RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadDrpProveedor.SelectedIndex == -1)
+            {
+                RadMessageBox.Show("Debes seleccionar un Proveedor.", "ALERTA");
+                return;
+            }
+
+            if (RadTxtNumeroFactura.Text=="")
+            {
+                RadMessageBox.Show("Debes ingresar Número de Factura.", "ALERTA");
+                return;
+            }
+
+            if (float.Parse(RadMskValorPagoFactura.Value.ToString()) == 0)
+            {
+                RadMessageBox.Show("Debes ingresar el valor de la Factura", "ALERTA");
                 return;
             }
 

@@ -248,6 +248,29 @@ namespace Peluqueria
             }
 
 
+            if(RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadTxtNombre.Text == "")
+            {
+                RadMessageBox.Show("Debes ingresar Nombre del Servicio.", "ALERTA");
+                return;
+            }
+
+            if (RadTxtCodigo.Text == "")
+            {
+                RadMessageBox.Show("Debes ingresar Código del Servicio.", "ALERTA");
+                return;
+            }
+                       
+            if (float.Parse(RadMskValorVenta.Value.ToString()) == 0 && !RadChkVariable.Checked)
+            {
+                RadMessageBox.Show("Debes ingresar el valor de Venta del Servicio.", "ALERTA");
+                return;
+            }
+
             Servicio service = new Servicio();
             service.ServicioID = modifica ? int.Parse(dttServicio.Rows[RowIndex]["ServicioID"].ToString()) : 0;
             service.Nombre = RadTxtNombre.Text;

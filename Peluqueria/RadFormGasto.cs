@@ -188,6 +188,23 @@ namespace Peluqueria
                 return;
             }
 
+            if (RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            if (RadTxtDetalle.Text=="")
+            {
+                RadMessageBox.Show("Debes Ingresar el detalle de la Compra.", "ALERTA");
+                return;
+            }
+
+            if (float.Parse(RadMskValorGasto.Value.ToString()) == 0)
+            {
+                RadMessageBox.Show("Debes ingresar el valor de la Compra.", "ALERTA");
+                return;
+            }
+
             Gasto Product = new Gasto();
             Product.GastoID = modifica ? int.Parse(dttGasto.Rows[RowIndex]["GastoID"].ToString()) : 0;
             Product.Detalle = RadTxtDetalle.Text;

@@ -170,6 +170,17 @@ namespace Peluqueria
                 return;
             }
 
+            if (RadMessageBox.Show("Seguro desea guardar la información suministrada?", "ALERTA", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }           
+
+            if (float.Parse(RadMskValorDeposito.Value.ToString()) == 0)
+            {
+                RadMessageBox.Show("Debes ingresar el valor del Deposito", "ALERTA");
+                return;
+            }
+
             Deposito Product = new Deposito();
             Product.DepositoID = modifica ? int.Parse(dttDeposito.Rows[RowIndex]["DepositoID"].ToString()) : 0;
             Product.ValorDeposito = Convert.ToInt32(float.Parse(RadMskValorDeposito.Value.ToString()));
