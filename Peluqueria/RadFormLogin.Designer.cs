@@ -117,6 +117,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
+            this.Load += new System.EventHandler(this.RadFormLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadFormLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.RadTxtUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadLblUser)).EndInit();

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Peluqueria.Clases;
 using System.IO;
+using System.Diagnostics;
 
 namespace Peluqueria
 {
@@ -23,6 +24,20 @@ namespace Peluqueria
             ThemeResolutionService.ApplyThemeToControlTree(this, Program.NombreTema);
             RadMessageBox.ThemeName = this.ThemeName;
 
+        }
+
+        private void RadFormLogin_Load(object sender, EventArgs e)
+        {
+            string processName = Process.GetCurrentProcess().ProcessName;
+            Process[] instances = Process.GetProcessesByName(processName);
+
+            if (instances.Length > 1)
+            {
+                MessageBox.Show("La aplicación Peluqueria ya se está ejecutando. Imposible Continuar");
+                Application.Exit();
+                return;
+
+            }
         }
 
         private void RadBtnLogin_Click(object sender, EventArgs e)
@@ -85,11 +100,44 @@ namespace Peluqueria
 
                         if (Dts.Tables[0].Rows[0]["Resultado"].ToString() == "1")
                         {
-                            Consulta.GeneraExcelMultiplePagina( Application.StartupPath+ @"\reporte"+DateTime.Now.ToString("yyyyMMdd")+".xls");
-                            Consulta.Correo("Reporte", new string[] { Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls" });
 
-                            FileInfo reporte = new FileInfo(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
-                            reporte.Delete();
+                            FileInfo reporte;
+
+                            try
+                            {
+                                System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry("www.google.com");
+
+                                try
+                                {
+                                    if (File.Exists(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls"))
+                                    {
+                                        reporte = new FileInfo(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+                                        reporte.Delete();
+                                    }
+
+
+                                    Consulta.GeneraExcelMultiplePagina(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+                                    Consulta.Correo("Reporte", new string[] { Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls" });
+                                }
+                                catch (Exception ex)
+                                {
+
+                                    RadMessageBox.Show("Se presentaron errores al intentar enviar el correo de reportes.\nSe le recomienda loguearse de nuevo mas tarde para realizar esta tarea");
+                                }
+
+                            }
+                            catch (Exception es)
+                            {
+
+                                RadMessageBox.Show("En este momento no cuenta con una conexión a internet, asi que no se enviará el correo con los resportes\nSe le recomienda loguearse de nuevo mas tarde para realizar esta tarea.");
+                            }
+
+
+                            if (!File.Exists(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls"))
+                            {
+                                reporte = new FileInfo(Application.StartupPath + @"\reporte" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+                                reporte.Delete(); 
+                            }
 
                             RadRibbonFormMain FMain = new RadRibbonFormMain();
                             FMain.Show();
