@@ -372,12 +372,6 @@ namespace Peluqueria
                 return;
             }
 
-            if (RadTxtUsuario.Text == "" || RadTxtClave.Text=="")
-            {
-                RadMessageBox.Show("Debes ingresar Nombre de Usuario y su Clave.", "ALERTA");
-                return;
-            }
-
             if (RadDrpRol.SelectedIndex==-1)
             {
                 RadMessageBox.Show("Debe seleccionar el Rol del Usuario.", "ALERTA");
@@ -389,6 +383,14 @@ namespace Peluqueria
                 RadMessageBox.Show("Solo puede crear usuarios con roles inferiores.", "ALERTA");
                 return;
             }
+
+            if ((RadTxtUsuario.Text == "" || RadTxtClave.Text=="") && RadDrpRol.SelectedValue.ToString()!="4")
+            {
+                RadMessageBox.Show("Debes ingresar Nombre de Usuario y su Clave.", "ALERTA");
+                return;
+            }
+
+
 
 
 
